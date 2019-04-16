@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, FlatList } from 'react-native'
 
-import ListItem from './ListItems';
+import ListItem from './ListItem';
 
 const placeList = props => {
     return (
@@ -9,7 +9,8 @@ const placeList = props => {
             data={props.places} 
             renderItem={info => (
                 <ListItem 
-                    placeName={info.item.value} 
+                    placeName={info.item.name} 
+                    placeImage={info.item.image}
                     onItemPressed={() => props.onItemDeleted(info.item.key)} 
                 />
             )}
