@@ -17,9 +17,7 @@ class PlaceInput extends Component {
     if(this.state.placeName.trim() === "") {
       return;
     }
-
     this.props.placeAdded(this.state.placeName)
-
   };
 
   render() {
