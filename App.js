@@ -18,7 +18,7 @@ export default class App extends Component {
     places: []
   }
 
-  placeAdded = placeName => {
+  placeAddedHandler = placeName => {
     this.setState(prevState => {
       return {
         places: prevState.places.concat(placeName)
@@ -26,11 +26,24 @@ export default class App extends Component {
     })
   }
 
+  placeDeletedHandler = index => {
+    this.setState(prevState => {
+      return {
+        places: prevState.places.filter((place, i) => {
+          return i !== index;
+        })
+      }
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <PlaceInput placeAdded={this.placeAdded} />
-        <Places places={this.state.places} />
+        <PlaceInput placeAdded={this.placeAddedHandler} />
+        <Places 
+          places={this.state.places} 
+          onItemDeleted={this.placeDeletedHandler} 
+        />
       </View>
     );
   }
