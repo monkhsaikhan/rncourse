@@ -5,6 +5,7 @@ import AuthScreen from './src/screens/Auth/Auth';
 import SharePlaceScreen from './src/screens/SharePlaceTab/sharePlace';
 import FindPlaceScreen from './src/screens/FindPlaceTab/findPlace';
 import PlaceDetailScreen from './src/screens/Detail';
+import SideDrawer from './src/screens/SideDrawer/SideDrawer';
 import confirgureStore from './src/store/confirgureStore';
 
 const store = confirgureStore();
@@ -14,6 +15,7 @@ Navigation.registerComponent("awesome-places.AuthScreen", () => AuthScreen, stor
 Navigation.registerComponent("awesome-places.SharePlaceScreen", () => SharePlaceScreen, store, Provider)
 Navigation.registerComponent("awesome-places.FindPlaceScreen", () => FindPlaceScreen, store, Provider)
 Navigation.registerComponent("awesome-places.PlaceDetailScreen", () => PlaceDetailScreen, store, Provider)
+Navigation.registerComponent("awesome-places.SideDrawerScreen", () => SideDrawer, store, Provider)
 
 // Start a App
 Navigation.startSingleScreenApp({
